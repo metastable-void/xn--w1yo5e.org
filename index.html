@@ -144,8 +144,8 @@
             #box {
                 flex: 1;
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                align-items: start;
+                justify-content: start;
                 background-image: radial-gradient(circle farthest-side, #fff, #666);
                 flex-direction: column;
                 mix-blend-mode: screen;
@@ -155,6 +155,9 @@
                 writing-mode: vertical-rl;
                 overflow: auto;
                 min-inline-size: 0;
+                max-inline-size: 75vmin;
+                margin-block-start: 5vmin;
+                margin-block-end: 5vmin;
             }
 
             #text {
