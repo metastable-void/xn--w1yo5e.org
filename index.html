@@ -1,147 +1,234 @@
-<!-- -*- indent-tabs-mode: nil; tab-width: 2; -*- -->
-<!-- vim: set ts=&2 sw=2 et ai : -->
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' lang='ja' xml:lang='ja'>
-  <head>
-    <meta charset='utf-8'/>
-    <title>真空.org</title>
-    <link rel='icon' href='./assets/masora-icon.png'/>
-    <link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&amp;family=Noto+Serif+JP:wght@300&amp;display=swap"/>
-    <link rel="stylesheet" crossorigin="anonymous" href="https://code.cdn.mozilla.net/fonts/fira.css"/>
-    <meta name='viewport' content='width=device-width, initial-scale=1'/>
-    <meta property='og:type' content='article'/>
-    <meta property='og:title' content='真空.org'/>
-    <meta property='og:description' content='真空は準安定。'/>
-    <meta property='og:image' content='https://xn--w1yo5e.org/assets/masora-icon.png'/>
-    <meta name='twitter:site' content='VacuumNotes'/>
-    <style>
-      /* fonts */
-      @font-face {
-        font-family: 'Noto Emoji';
-        src: url(./assets/NotoEmoji-Regular.ttf);
-      }
+    <head>
+        <meta charset='utf-8'/>
+        <title>真空.org</title>
+        <link rel='icon' href='./assets/masora-icon.png'/>
+        <link rel="stylesheet" crossorigin="anonymous" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&amp;family=Noto+Serif+JP:wght@300&amp;display=swap"/>
+        <link rel="stylesheet" crossorigin="anonymous" href="https://code.cdn.mozilla.net/fonts/fira.css"/>
+        <meta name='viewport' content='width=device-width, initial-scale=1'/>
+        <meta property='og:type' content='article'/>
+        <meta property='og:title' content='真空.org'/>
+        <meta property='og:description' content='真空は準安定。'/>
+        <meta property='og:image' content='https://xn--w1yo5e.org/assets/masora-icon.png'/>
+        <style>
+            /* fonts */
+            @font-face {
+                font-family: 'Noto Emoji';
+                src: url(./assets/NotoEmoji-Regular.ttf);
+            }
 
-      @font-face {
-        font-family: 'Noto Sans Symbols2';
-        src: url(./assets/NotoSansSymbols2-Regular.ttf);
-      }
+            @font-face {
+                font-family: 'Noto Sans Symbols2';
+                src: url(./assets/NotoSansSymbols2-Regular.ttf);
+            }
 
-      @font-face {
-        font-family: 'UniHentaiKana';
-        src: url(./assets/UniHentaiKana-Regular.woff);
-      }
+            @font-face {
+                font-family: 'UniHentaiKana';
+                src: url(./assets/UniHentaiKana-Regular.woff);
+            }
 
-      a {
-        color: inherit;
-        font-weight: 500;
-        text-decoration: none;
-      }
+            a {
+                color: inherit;
+                font-weight: 500;
+                text-decoration: none;
+            }
 
-      :root {
-        display: flex;
-        min-width: 100%;
-        min-height: 100%;
-        --menhera-brand-primary-color: #5eaf30;
-        --font-sans: 'Fira Sans', 'Noto Sans JP', 'UniHentaiKana', 'Noto Emoji', 'Noto Sans Symbols2', system-ui, sans-serif;
-        --font-serif: 'Noto Serif JP', 'UniHentaiKana', 'Noto Emoji', 'Noto Sans Symbols2', serif;
-        --font-sans-adjust: 0.529167;
-        --font-serif-adjust: 0.446875;
-        --font-weight-main: 300; /* light */
-        --font-weight-bold: 500; /* medium */
-        background-image: url(./assets/masora-bg.jpg);
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-color: #677663;
-      }
-      ::selection {
-        background-color: var(--menhera-brand-primary-color);
-        color: var(--dark-text-color);
-      }
+            :root {
+                display: flex;
+                min-width: 100%;
+                min-height: 100%;
+                --menhera-brand-primary-color: #5eaf30;
+                --font-sans: 'Fira Sans', 'Noto Sans JP', 'UniHentaiKana', 'Noto Emoji', 'Noto Sans Symbols2', system-ui, sans-serif;
+                --font-serif: 'Noto Serif JP', 'UniHentaiKana', 'Noto Emoji', 'Noto Sans Symbols2', serif;
+                --font-sans-adjust: 0.529167;
+                --font-serif-adjust: 0.446875;
+                --font-weight-main: 300; /* light */
+                --font-weight-bold: 500; /* medium */
+                background-image: url(./assets/masora-bg.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-color: #677663;
+                flex-direction: column;
+            }
 
-      strong, tt, th, h1, h2, h3, h4, h5, h6 {
-        font-weight: var(--font-weight-bold);
-      }
-      body {
-        font-family: var(--font-sans);
-        flex: 1;
-        font-weight: 300;
-        display: flex;
-        margin: 0;
-        font-size-adjust: var(--font-sans-adjust);
-      background-color: rgba(0, 0, 0, .25)
-      }
-      #box {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-image: radial-gradient(circle farthest-side, #fff, #666);
-        flex-direction: column;
-        mix-blend-mode: screen;
-        row-gap: 1em;
-        padding-block-start: 5%;
-        padding-block-end: 5%;
-      }
-      #text {
-        font-size: 20vmin;
-        color: rgba(0, 0, 0, .5);
-        text-shadow: 0 0 .1em rgba(0, 0, 0, .5);
-        font-weight: 500;
-        padding: 0;
-        margin: 0;
-      }
-      #subheading {
-        font-size: 5vmin;
-      }
-      #words {
-        font-size: 5vmin;
-        color: #000;
-        writing-mode: vertical-rl;
-        font-family: var(--font-serif);
-        font-weight: 300;
-        height: 10em;
-        padding: 0;
-        margin: 0;
-        font-size-adjust: var(--font-serif-adjust);
-      }
-      #words::before {
-        content: '「';
-      }
-      #words::after {
-        content: '」';
-      }
-      nav {
-        margin: 0;
-        padding: 0;
-      }
+            ::selection {
+                background-color: var(--menhera-brand-primary-color);
+                color: var(--dark-text-color);
+            }
 
-      nav ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        column-gap: 25%;
-      }
-      footer {
-        text-align: center;
-        padding-inline-start: 2em;
-        padding-inline-end: 2em;
-      }
-    </style>
-  </head>
-  <body>
-    <div id='box'>
-      <h1 id='text'>真空.org</h1>
-      <div id='subheading'>xn--w1yo5e.org</div>
-      <blockquote id='words'>🌕🌓してメンへらごっこしてお薬調べて遊んでた昔が懐かしい——あの頃は苦しかったけど楽しかった。全てはもうあたまが自由に働かなくなった精神の夜に溶けてしまうだろうから、わすれないでいようね。</blockquote>
-      <nav>
-        <ul>
-          <li><a href='https://twitter.com/intent/user?user_id=847315328744865793'>Twitter</a></li>
-          <li><a href='https://github.com/metastable-void'>GitHub</a></li>
-        </ul>
-      </nav>
-      <footer>&#169; 2022 真空. License: <a rel='license' href='https://creativecommons.org/licenses/by-sa/4.0/'>CC-BY-SA-4.0</a> or <a rel='license' href='https://www.gnu.org/licenses/'>GNU GPL version 3 or later</a>.</footer>
-    </div>
-  </body>
+            strong, tt, th, h1, h2, h3, h4, h5, h6 {
+                font-weight: var(--font-weight-bold);
+            }
+
+            body {
+                font-family: var(--font-sans);
+                flex: 1;
+                font-weight: 300;
+                display: flex;
+                flex-direction: column;
+                margin: 0;
+                font-size-adjust: var(--font-sans-adjust);
+                background-color: rgba(0, 0, 0, .25)
+            }
+
+            #page-header {
+                background-color: #bac69f;
+            }
+
+            #page-header-inner {
+                margin-inline: auto;
+                max-inline-size: 40rem;
+                display: flex;
+                flex-direction: row-reverse;
+                block-size: 4rem;
+                text-align: end;
+            }
+
+            #logo {
+                inline-size: 4rem;
+                background: url(/assets/masora-icon.png) center / cover;
+            }
+
+            #banner {
+                min-inline-size: 0;
+                font-size: 150%;
+                align-self: center;
+                text-decoration: none;
+                color: #6f6f6f;
+                padding-inline-start: 1em;
+                padding-inline-end: 1em;
+                font-family: monospace;
+            }
+
+            #banner-tld {
+                color: #a6a6a6;
+            }
+
+            #websites {
+                margin-block: .5rem;
+                margin-inline: auto;
+                max-inline-size: 40rem;
+                padding: 1em;
+                box-sizing: border-box;
+            }
+
+            #websites ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                column-gap: 1em;
+            }
+
+            #websites ul > :not(:first-child) {
+                border-inline-start: solid 1px #cccccc;
+                padding-inline-start: 1em;
+            }
+
+            #websites ul a {
+                text-decoration: none;
+                color: #657241;
+            }
+
+            #websites ul strong {
+                font-weight: bold;
+                color: #666666;
+            }
+
+            #box {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: radial-gradient(circle farthest-side, #fff, #666);
+                flex-direction: column;
+                mix-blend-mode: screen;
+                row-gap: 1em;
+                padding-block-start: 5%;
+                padding-block-end: 5%;
+            }
+
+            #text {
+                font-size: 20vmin;
+                color: rgba(0, 0, 0, .5);
+                text-shadow: 0 0 .1em rgba(0, 0, 0, .5);
+                font-weight: 500;
+                padding: 0;
+                margin: 0;
+            }
+
+            #subheading {
+                font-size: 5vmin;
+            }
+
+            #words {
+                font-size: 5vmin;
+                color: #000;
+                writing-mode: vertical-rl;
+                font-family: var(--font-serif);
+                font-weight: 300;
+                height: 10em;
+                padding: 0;
+                margin: 0;
+                font-size-adjust: var(--font-serif-adjust);
+            }
+
+            #words::before {
+                content: '「';
+            }
+
+            #words::after {
+                content: '」';
+            }
+
+            nav {
+                margin: 0;
+                padding: 0;
+            }
+
+            nav ul {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                column-gap: 25%;
+            }
+
+            footer {
+                text-align: center;
+                padding-inline-start: 2em;
+                padding-inline-end: 2em;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="page-header">
+            <div id="page-header-inner">
+                <a id="logo" href="/"></a>
+                <a id="banner" href="/">真空<span id="banner-tld">.org</span></a>
+            </div>
+        </header>
+        <nav id="websites">
+            <ul>
+                <li><strong>真空.org</strong></li>
+                <li><a href="https://www.mori.yuka.org/">MORI.Yuka.org</a></li>
+            </ul>
+        </nav>
+        <div id='box'>
+            <h1 id='text'>真空.org</h1>
+            <div id='subheading'>xn--w1yo5e.org</div>
+            <blockquote id='words'>🌕🌓してメンへらごっこしてお薬調べて遊んでた昔が懐かしい——あの頃は苦しかったけど楽しかった。全てはもうあたまが自由に働かなくなった精神の夜に溶けてしまうだろうから、わすれないでいようね。</blockquote>
+            <nav>
+                <ul>
+                    <li><a href='https://twitter.com/intent/user?user_id=847315328744865793'>Twitter</a></li>
+                    <li><a href='https://github.com/metastable-void'>GitHub</a></li>
+                </ul>
+            </nav>
+            <footer>&#169; 2022 真空. License: <a rel='license' href='https://creativecommons.org/licenses/by-sa/4.0/'>CC-BY-SA-4.0</a> or <a rel='license' href='https://www.gnu.org/licenses/'>GNU GPL version 3 or later</a>.</footer>
+        </div>
+    </body>
 </html>
